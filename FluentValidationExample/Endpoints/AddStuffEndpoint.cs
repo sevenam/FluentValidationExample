@@ -15,7 +15,7 @@ namespace FluentValidationExample.Endpoints {
           stuffService.AddStuff(stuff);
           return $"Added some new stuff with name: {stuff.Name}";
         } else {
-          return validationResult.Errors.First().ToString();
+          return string.Join(string.Empty, validationResult.Errors);
         }
       }).WithOpenApi(op => new(op) { Summary = "Stuff.Add" });
     }
