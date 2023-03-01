@@ -17,7 +17,7 @@ builder.Services.AddScoped<DeleteStuffEndpoint>();
 builder.Services.AddScoped<GetStuffByIdEndpoint>();
 builder.Services.AddSingleton<IStuffService, StuffService>();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
-builder.Services.AddValidatorsFromAssemblyContaining<StuffValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<StuffDtoValidator>();
 
 var app = builder.Build();
 app.UseHttpsRedirection();

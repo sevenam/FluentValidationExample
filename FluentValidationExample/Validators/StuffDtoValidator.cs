@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
-using FluentValidationExample.Entities;
+using FluentValidationExample.Dtos;
 
 namespace FluentValidationExample.Validators {
-  public class StuffValidator : AbstractValidator<Stuff> {
-    public StuffValidator() {
+  public class StuffDtoValidator : AbstractValidator<StuffDto> {
+    public StuffDtoValidator() {
       RuleFor(x => x.Name).NotEmpty().Length(0, 20);
     }
   }

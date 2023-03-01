@@ -8,10 +8,10 @@ using Microsoft.AspNetCore.Mvc;
 namespace FluentValidationExample.Endpoints {
   public class AddStuffEndpoint : IEndpoint {
     public void MapEndpoint(WebApplication app) {
-      app.MapPost("/stuff/", ([FromBody] StuffDto stuffDto, [FromServices] IStuffService stuffService, [FromServices] IMapper mapper, [FromServices] StuffValidator stuffValidator) => {
-        var stuff = mapper.Map<Stuff>(stuffDto);
-        var validationResult = stuffValidator.Validate(stuff);
+      app.MapPost("/stuff/", ([FromBody] StuffDto stuffDto, [FromServices] IStuffService stuffService, [FromServices] IMapper mapper, [FromServices] StuffDtoValidator validator) => {
+        var validationResult = validator.Validate(stuffDto);
         if(validationResult.IsValid) {
+          var stuff = mapper.Map<Stuff>(stuffDto);
           stuffService.AddStuff(stuff);
           return $"Added some new stuff with name: {stuff.Name}";
         } else {
