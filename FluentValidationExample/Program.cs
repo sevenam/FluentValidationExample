@@ -1,5 +1,6 @@
 using FluentValidationExample.Endpoints;
 using FluentValidationExample.Services;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,7 @@ builder.Services.AddScoped<GetAllTheStuffEndpoint>();
 builder.Services.AddScoped<DeleteStuffEndpoint>();
 builder.Services.AddScoped<GetStuffByIdEndpoint>();
 builder.Services.AddSingleton<IStuffService, StuffService>();
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 
 var app = builder.Build();
