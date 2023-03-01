@@ -1,5 +1,7 @@
+using FluentValidation;
 using FluentValidationExample.Endpoints;
 using FluentValidationExample.Services;
+using FluentValidationExample.Validators;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,7 +17,7 @@ builder.Services.AddScoped<DeleteStuffEndpoint>();
 builder.Services.AddScoped<GetStuffByIdEndpoint>();
 builder.Services.AddSingleton<IStuffService, StuffService>();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
-
+builder.Services.AddValidatorsFromAssemblyContaining<StuffValidator>();
 
 var app = builder.Build();
 app.UseHttpsRedirection();
