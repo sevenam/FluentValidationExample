@@ -11,9 +11,12 @@ namespace FluentValidationExample.Endpoints {
       app.MapPost("/stuff/", ([FromBody] StuffDto stuffDto, [FromServices] IStuffService stuffService, [FromServices] IMapper mapper, [FromServices] StuffValidator stuffValidator) => {
         var stuff = mapper.Map<Stuff>(stuffDto);
         var validationResult = stuffValidator.Validate(stuff);
-        if(validationResult.IsValid)
+        if(validationResult.IsValid) {
           stuffService.AddStuff(stuff);
-        return validationResult.IsValid;
+          return $"Added some new stuff with name: {stuff.Name}";
+        } else {
+          return validationResult.Errors.First().ToString();
+        }
       }).WithOpenApi(op => new(op) { Summary = "Stuff.Add" });
     }
   }
