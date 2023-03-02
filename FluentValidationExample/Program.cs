@@ -1,4 +1,5 @@
 using FluentValidation;
+using FluentValidation.AspNetCore;
 using FluentValidationExample.Endpoints;
 using FluentValidationExample.Services;
 using FluentValidationExample.Validators;
@@ -17,6 +18,7 @@ builder.Services.AddScoped<DeleteStuffEndpoint>();
 builder.Services.AddScoped<GetStuffByIdEndpoint>();
 builder.Services.AddSingleton<IStuffService, StuffService>();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+builder.Services.AddFluentValidationAutoValidation(); // this only works with [ApiController] and not MinimalAPIs it seems (must use DI and manually validate in endpoint)
 builder.Services.AddValidatorsFromAssemblyContaining<StuffDtoValidator>();
 
 var app = builder.Build();
