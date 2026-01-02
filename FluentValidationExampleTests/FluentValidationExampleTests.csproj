@@ -22,4 +22,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FluentValidationExample\FluentValidationExample.csproj" />
+  </ItemGroup>
+
 </Project>

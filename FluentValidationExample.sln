@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.6.33417.168
+# Visual Studio Version 18
+VisualStudioVersion = 18.3.11310.294 d18.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentValidationExample", "FluentValidationExample\FluentValidationExample.csproj", "{B0D745CA-1EEA-4F9F-85B3-6820C8035393}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentValidationExampleTests", "FluentValidationExampleTests\FluentValidationExampleTests.csproj", "{3E5E9C46-52E5-4FDE-BE22-F687B49C9A7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B0D745CA-1EEA-4F9F-85B3-6820C8035393}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0D745CA-1EEA-4F9F-85B3-6820C8035393}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0D745CA-1EEA-4F9F-85B3-6820C8035393}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E5E9C46-52E5-4FDE-BE22-F687B49C9A7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E5E9C46-52E5-4FDE-BE22-F687B49C9A7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E5E9C46-52E5-4FDE-BE22-F687B49C9A7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E5E9C46-52E5-4FDE-BE22-F687B49C9A7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
