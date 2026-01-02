@@ -5,7 +5,7 @@ namespace FluentValidationExample.Services {
     private readonly List<Stuff> listOfStuff;
 
     public StuffService() {
-      listOfStuff = new List<Stuff>();
+      listOfStuff = [];
     }
 
     public List<Stuff> GetAllTheStuff() {
