@@ -1,3 +1,5 @@
 .vs
 FluentValidationExample/obj/
 FluentValidationExample/bin/
+FluentValidationExampleTests/bin/
+FluentValidationExampleTests/obj/
